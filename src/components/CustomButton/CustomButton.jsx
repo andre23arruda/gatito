@@ -4,11 +4,11 @@ import createStyle from './styles'
 
 
 function CustomButton(props) {
-    const styles = createStyle()
+    const styles = createStyle(props.pequeno, props.invertido)
 
 	return (
-        <TouchableOpacity style={ styles.button }>
-            <Text style={ styles.text }>Adicionar </Text>
+        <TouchableOpacity style={ [styles.button, props.style] }>
+            <Text style={ styles.text }>{ props.text } </Text>
         </TouchableOpacity>
 	)
 }

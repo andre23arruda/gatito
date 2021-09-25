@@ -2,17 +2,22 @@ import React from 'react'
 import { FlatList } from 'react-native'
 
 // components
-import Service from './components/Service/Service'
 import MainScreen from '../../components/MainScreen/MainScreen'
+import Service from './components/Service/Service'
+import Status from './components/Status/Status'
 
 // mocks
 import { servicos } from '../../../mocks/servicos'
+import styles from './styles'
 
 
-function Services() {
+function Cart() {
 	return (
-		<MainScreen backgroundColor={ 'white' }>
+		<MainScreen>
+            <Status services={ servicos }/>
+
             <FlatList
+                style={ styles.list }
                 data={ servicos }
                 renderItem={ ({ item }) => <Service item={ item } /> }
                 keyExtractor={ item => item.nome }
@@ -21,4 +26,4 @@ function Services() {
 	)
 }
 
-export default Services
+export default Cart
