@@ -2,7 +2,7 @@ import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { SafeAreaView, Text } from 'react-native'
 
-// mocks
+// styles
 import createStyle, { colors } from '../../../stylesGlobal'
 
 function MainScreen(props) {

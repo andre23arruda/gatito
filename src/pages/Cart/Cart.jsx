@@ -1,13 +1,15 @@
 import React from 'react'
 import { FlatList } from 'react-native'
 
-// components
+// custom components
 import MainScreen from '../../components/MainScreen/MainScreen'
-import Service from './components/Service/Service'
+import Service from '../../components/Service/Service'
 import Status from './components/Status/Status'
 
 // mocks
 import { servicos } from '../../../mocks/servicos'
+
+// styles
 import styles from './styles'
 
 
@@ -19,8 +21,9 @@ function Cart() {
             <FlatList
                 style={ styles.list }
                 data={ servicos }
-                renderItem={ ({ item }) => <Service item={ item } /> }
+                renderItem={ ({ item }) => <Service item={ item } fixedBlock={ true } buttonLabel={ 'Remover do Carrinho' } /> }
                 keyExtractor={ item => item.nome }
+                removeClippedSubviews={false}
             />
         </MainScreen>
 	)

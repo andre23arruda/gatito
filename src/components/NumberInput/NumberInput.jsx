@@ -4,7 +4,6 @@ import { TextInput } from 'react-native'
 // utils
 import { removeUselessZero, valueIsNumber } from '../../utils/validator'
 
-
 // styles
 import styles from './styles'
 

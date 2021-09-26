@@ -1,15 +1,18 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-// components
+// custom components
 import CustomButton from '../../../../components/CustomButton/CustomButton'
-import { formatMoney } from '../../../../utils/money'
 
+// utils
+import { calculateTotal, formatMoney } from '../../../../utils/money'
+
+// styles
 import styles from './styles'
 
 
-const Status = (props) => {
-    const total = props.services.reduce((accum, item) => accum + (item.preco * item.quantidade) , 0);
+function Status(props) {
+    const total = calculateTotal(props.services)
 
 	return (
         <View style={ styles.conteudo }>
@@ -21,7 +24,6 @@ const Status = (props) => {
                 <Text style={ styles.valor }>
                     { formatMoney(total) }
                 </Text>
-
             </View>
 
             <CustomButton
@@ -30,9 +32,6 @@ const Status = (props) => {
                 invertido={ true }
             />
         </View>
-
-
-
 	)
 }
 
